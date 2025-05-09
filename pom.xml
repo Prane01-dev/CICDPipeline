@@ -51,4 +51,17 @@
             </plugin>
         </plugins>
     </build>
+
+    <!-- ✅ Correctly Placed Nexus Deployment Config -->
+    <distributionManagement>
+        <repository>
+            <id>nexus</id>
+            <url>http://host.docker.internal:8081/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>nexus</id>
+            <url>http://host.docker.internal:8081/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
 </project>
