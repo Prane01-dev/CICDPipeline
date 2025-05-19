@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-    
+
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
@@ -17,8 +17,8 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>CICD</name>
     <description>Demo project for CICD</description>
-    
-    <!-- WAR Packaging for external Tomcat -->
+
+    <!-- WAR packaging for deployment on external Tomcat -->
     <packaging>war</packaging>
 
     <properties>
@@ -26,13 +26,13 @@
     </properties>
 
     <dependencies>
-        <!-- Core Spring Boot -->
+        <!-- Core Spring Boot starter -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
 
-        <!-- Web without embedded Tomcat -->
+        <!-- Spring Web without embedded Tomcat -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -44,14 +44,14 @@
             </exclusions>
         </dependency>
 
-        <!-- Tomcat provided (external) -->
+        <!-- External Tomcat provided by server -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-tomcat</artifactId>
             <scope>provided</scope>
         </dependency>
 
-        <!-- Testing -->
+        <!-- Testing dependencies -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -61,7 +61,7 @@
 
     <build>
         <plugins>
-            <!-- Spring Boot WAR plugin -->
+            <!-- Spring Boot Maven plugin for packaging WAR -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -69,7 +69,7 @@
         </plugins>
     </build>
 
-    <!-- Nexus Repository Config -->
+    <!-- Nexus repository configuration -->
     <distributionManagement>
         <repository>
             <id>nexus</id>
